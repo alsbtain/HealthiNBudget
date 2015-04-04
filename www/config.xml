@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "com.Alsbtain.HealthiNBudget"
+        version = "1.0.0"
+		versionCode = "1">
+
+    <name>HealthiNBudget</name>
+
+    <description>
+        HealthiNBudget
+    </description>
+
+    <author href="https://github.com/alsbtain/HealthiNBudget" email="info@alsbtain.net">
+        Abdullah Al Abdulghani, Neelanjan Lahiri, and Reno Seo
+    </author>
+
+    <preference name="permissions" value="none"/>
+
+    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+	<gap:plugin name="org.apache.cordova.splashscreen" />
+	<gap:plugin name="org.apache.cordova.console" />
+	<gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+
+	<gap:plugin name="nl.x-services.plugins.socialsharing" />
+
+    <icon src="icon.png" />
+    <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="res/icon/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="res/icon/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+
+    <access origin="*" />
+
+	<gap:platform name="android" />
+
+</widget>
