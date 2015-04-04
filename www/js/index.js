@@ -1,13 +1,3 @@
-function getRadio(name){
-	var oRadio = document.getElementsByName(name);
-	for(var i = 0; i < oRadio.length; i++){
-      if(oRadio[i].checked){
-         return oRadio[i].value;
-      }
-	}
-   return '';
-}
-
 function saveValues(){
 	form_height = foot_to_inch(document.getElementById('form_ft').value, document.getElementById('form_inch').value);
 	form_weight = document.getElementById('form_weight').value;
