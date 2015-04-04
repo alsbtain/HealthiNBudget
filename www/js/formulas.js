@@ -1,6 +1,6 @@
 //the height has to be converted to inches
 function foot_to_inch (feet, inches) {
-	return ((feet*12)+inches)
+	return ((Number(feet*12)+Number(inches)))
 }
 
 //a function that will change the value back. it will return values in a list
