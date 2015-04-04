@@ -10,22 +10,25 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/formulas.js"></script>
-<script type="text/javascript" src="js/CSVToArray.js"></script>
+<script type="text/javascript" src="js/papaparse.js"></script>
 <title>HealthiNBudget</title>
 </head>
 <body onload="CSVReady();">
 <h1>HealthiNBudget</h1>
 <p><a href="index.html">index</a></p>
+<form>
+<p><input type="text" name="search" /></p>
+</form>
 <p id="results"></p>
 <script>
 function CSVReady(){
-	var reader = new FileReader();
-	reader.onload = function(e) {
-		var text = reader.result;
-		myArray = CSVToArray(strData);
-		document.getElementById('results').innerHTML = myArray;
-	}
-	reader.readAsText('data/home.csv');
+	Papa.parse('data/home.csv', {
+		download: true,
+		header: true,
+		complete: function(results) {
+			document.getElementById('results').innerHTML = results.data[0].Description;
+		}
+	});
 }
 </script>
 </body>
