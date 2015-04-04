@@ -8,15 +8,16 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/formulas.js"></script>
 <title>HealthiNBudget</title>
 </head>
 <body>
 <h1>HealthiNBudget</h1>
 <form>
-<p>Height: <input type="number" name="ft" /> ft <input type="number" name="inch" /> inch</p>
-<p>Weight: <input type="number" name="weight" /> lb</p>
-<p>Sex: <input type="radio" name="sex" value="XX"> Female <input type="radio" name="sex" value="XY"> Male</p>
-<p><input type="submit" value="Save" /></p>
+<p>Height: <input type="number" name="ft" id="form_ft" /> ft <input type="number" name="inch" id="form_inch" /> inch</p>
+<p>Weight: <input type="number" name="weight" id="form_weight" /> lb</p>
+<p>Sex: <input type="radio" name="sex" id="form_sex" value="XX"> Female <input type="radio" name="sex" value="XY"> Male</p>
+<p><input type="button" value="Save" onclick="saveValues();" /></p>
 </form>
 </body>
 </html>
