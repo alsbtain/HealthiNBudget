@@ -13,15 +13,28 @@
 <script type="text/javascript" src="js/papaparse.js"></script>
 <title>HealthiNBudget</title>
 </head>
-<body onload="CSVReady();">
+<body onload="showkcal();CSVReady();">
 <h1>HealthiNBudget</h1>
 <p><a href="index.html">index</a></p>
+<p>You need to have <span id="kcal"></span> Cal more today.</p>
 <form>
 <p id="searchBox"></p>
 </form>
 <p id="results"></p>
 <script>
-alert(localStorage.getItem('sex'));
+var calmore;
+function showkcal(){
+	calmore = parseInt(localStorage.getItem('kcal'));
+	if(calmore<0){
+		calmore = 0;
+	}
+	document.getElementById('kcal').innerHTML = calmore;
+}
+
+function subtractkcal(kcal){
+	localStorage.setItem('kcal', (calmore - kcal));
+}
+
 var CSVData;
 function CSVReady(){
 	Papa.parse('data/home.csv', {
@@ -41,7 +54,8 @@ result = '';
 			if(CSVData[i].Description.toLowerCase().search(word.toLowerCase()) > -1){
 				result += 'Meal: ' + CSVData[i].Description + '<br />';
 				result += 'Measure: ' + CSVData[i].Measure + '<br />';
-				result += 'Energy: ' + CSVData[i].Energy + ' kcal/measure<br /><br />';
+				result += 'Energy: ' + CSVData[i].Energy + ' kcal/measure<br />';
+				result += '<input type = "button" value = "I\'ll eat this!" onclick="subtractkcal(' + CSVData[i].Energy + '); showkcal();" /><br /><br />';
 			}
 		}
 	}else{
