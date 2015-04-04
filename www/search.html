@@ -10,18 +10,23 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/formulas.js"></script>
+<script type="text/javascript" src="js/CSVToArray.js"></script>
 <title>HealthiNBudget</title>
 </head>
-<body onload="initialize();">
+<body onload="CSVReady();">
 <h1>HealthiNBudget</h1>
-<p><a href="search.html">search</a></p>
-<form>
-<p>Height: <input type="number" name="ft" id="form_ft" /> ft <input type="number" name="inch" id="form_inch" /> inch</p>
-<p>Weight: <input type="number" name="weight" id="form_weight" /> lb</p>
-<p>Sex: <input type="radio" name="form_sex" id="form_female" value="XX"> Female <input type="radio" name="form_sex" id="form_male" value="XY"> Male</p>
-<p>Age: <input type="number" name="age" id="form_age" /></p>
-<p><input type="button" value="Save" onclick="saveValues();" /></p>
-</form>
+<p><a href="index.html">index</a></p>
 <p id="results"></p>
+<script>
+function CSVReady(){
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		var text = reader.result;
+		myArray = CSVToArray(strData);
+		document.getElementById('results').innerHTML = myArray;
+	}
+	reader.readAsText('data/home.csv');
+}
+</script>
 </body>
 </html>
