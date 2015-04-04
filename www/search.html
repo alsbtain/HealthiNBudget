@@ -17,18 +17,30 @@
 <h1>HealthiNBudget</h1>
 <p><a href="index.html">index</a></p>
 <form>
-<p><input type="text" name="search" /></p>
+<p id="searchBox"></p>
 </form>
 <p id="results"></p>
 <script>
+var CSVData;
 function CSVReady(){
 	Papa.parse('data/home.csv', {
 		download: true,
 		header: true,
 		complete: function(results) {
-			document.getElementById('results').innerHTML = results.data[0].Description;
+			//document.getElementById('results').innerHTML = results.data[0].Description;
+			CSVData = results.data;
+			document.getElementById('searchBox').innerHTML = '<input type="text" name="search" oninput="doSearch(this.value);" />';
 		}
 	});
+}
+
+function doSearch(word){
+	if(word.length>1){
+		//alert(word);
+		alert(CSVData.length);
+	}else{
+	
+	}
 }
 </script>
 </body>
