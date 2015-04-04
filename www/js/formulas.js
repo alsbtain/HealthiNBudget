@@ -5,9 +5,9 @@ function foot_to_inch (feet, inches) {
 
 //a function that will change the value back. it will return values in a list
 function inch_to_foot (inches) {
-	feet = Math.floor(inches/12)
-	inch = inches%12
-	array = [feet, inch]
+	var feet = Math.floor(inches/12)
+	var inch = inches%12
+	var array = [feet, inch]
 	return array
 }
 
