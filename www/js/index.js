@@ -11,6 +11,14 @@ function saveValues(){
 	localStorage.setItem("sex", form_sex);
 	localStorage.setItem("age", form_age);
 	
+	localStorage.setItem("kcal", form_age);
+	
+	if(form_sex == 'XY'){
+		localStorage.setItem("kcal", metabolism_rate_men(form_weight, form_height, form_age));
+	}else{
+		localStorage.setItem("kcal", metabolism_rate_women(form_weight, form_height, form_age));
+	}
+	
 	showResults();
 }
 
