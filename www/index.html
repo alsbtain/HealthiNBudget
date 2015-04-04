@@ -16,7 +16,12 @@
 		<p style="color:green; font-size:30px"> Welcome to HealthiNBudget! </p>
 		<p style="font-size:15px"> HealthiNBudget strives to help an individual understand how body works, blah blah </p>
 		<div>
-			<a href="Service1.html"> Press to begin! </a>
+			<a href="Service1.html" id="menuLink"> Press to begin! </a>
 		</div>
+		<script>
+			if(localStorage.getItem('sex') == "XY" || localStorage.getItem('sex') == "XX"){
+				document.getElementById('menuLink').href='menu.html';
+			}
+		</script>
 </body>
 </html>
