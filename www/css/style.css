@@ -40,17 +40,16 @@ body {
 }
 
 #button{
-    height: 30px;
-    width: 120px;
+    width: 25%;
     border-color: #ffffff;
     background: rgba(255,255,255,0.5);
     border-style: 2px dashed;
     border-radius: 5px;
     margin: auto;
     text-align: center;
-    font-size: 15px;
+    font-size: 25px;
 	margin-top: 10px;
-	padding-top: 10px;
+	padding: 10px;
 }
 
 #button a{
