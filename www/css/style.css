@@ -13,6 +13,7 @@ html {
 
 body {
 	background-image: url('../images/imag.jpg');
+	background-size: cover;
     display: table-cell;
     vertical-align: middle;
 }
