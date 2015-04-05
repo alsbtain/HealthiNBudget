@@ -1,4 +1,4 @@
-div {
+#button {
     height: 50px;
     width: 120px;
     border-color: #6495ED;
@@ -10,38 +10,42 @@ div {
     position: fixed;
     top: 70%;
     left: 50%;
-    size: 25px;
+    size: 55px;
 }
 
 #back {
-	height: 50px;
-    width: 120px;
+	height: 100px;
+    width: 82%;
     border-color: #6495ED;
     background-color: #BCD2EE; /*this gives the color, the one above gives the size*/
     border-style: 2px dashed;
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    border-radius: 5px;
+    top: 50%;
+    left: 10%;
+    size: 55px;
 }
-a {
+#menulink {
 	text-decoration:none;
 	color: green;
 	font-family: Trebuchet MS;
 	size: 40px;
 }
 
-body {
-	text-decoration:none;
-	color: black;
-	font-family: CenturyGothic;
-}
-
 #descr {
+	width: 82%;
 	text-align: center;
 	margin: auto;
 	position: fixed;
 	top: 50%;
 	left: 10%;
+	color: black;
+	font-family: CenturyGothic;
 }
 
-h1 {
+#Title {
 	text-align: center;
 	margin: auto;
 	position: fixed;
