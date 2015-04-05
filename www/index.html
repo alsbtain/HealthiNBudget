@@ -12,16 +12,18 @@
 		<script type="text/javascript" src="js/formulas.js"></script>
 		<title>HealthiNBudget</title>
 	</head>
-	<body>
-		<p style="color:green; font-size:30px"> Welcome to HealthiNBudget! </p>
-		<p style="font-size:15px"> HealthiNBudget strives to help an individual understand how body works, blah blah </p>
-		<div>
-			<a href="Service1.html" id="menuLink"> Press to begin! </a>
+	<body background = "imag.jpg">
+		<h1 = "Title"> Welcome to HealthiNBudget! </h1>
+		<div id = "back">
+			<p id = "descr"> HealthiNBudget strives to help individuals maintain a balanced diet by providing them with informations of the required amount of calories to maintain weight, increase weight, and lose weight. </p>
+		</div>
+		<div id = "button">
+			<a href = "Service1.html" id = "menuLink"> Press to begin! </a>
 		</div>
 		<script>
-			if(localStorage.getItem('sex') == "XY" || localStorage.getItem('sex') == "XX"){
-				document.getElementById('menuLink').href='menu.html';
+			if (localStorage.getItem('sex')=="XY" || localStorage.getItem('sex')=="XX"){
+				document.getElementById('menulink').href='menu.html';
 			}
 		</script>
-</body>
+	</body>
 </html>

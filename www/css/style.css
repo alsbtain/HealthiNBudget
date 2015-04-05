@@ -7,13 +7,24 @@ div {
     border-radius: 5px;
     margin: auto;
     text-align: center;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    size: 25px;
 }
 
+#back {
+	height: 50px;
+    width: 120px;
+    border-color: #6495ED;
+    background-color: #BCD2EE; /*this gives the color, the one above gives the size*/
+    border-style: 2px dashed;
+}
 a {
 	text-decoration:none;
 	color: green;
 	font-family: Trebuchet MS;
-	size: 20px;
+	size: 40px;
 }
 
 body {
@@ -21,7 +32,21 @@ body {
 	color: black;
 	font-family: CenturyGothic;
 }
-p {
+
+#descr {
 	text-align: center;
 	margin: auto;
+	position: fixed;
+	top: 50%;
+	left: 10%;
+}
+
+h1 {
+	text-align: center;
+	margin: auto;
+	position: fixed;
+	top: 30%;
+	left: 20%;
+	color: black;
+	font-size: 50px;
 }
