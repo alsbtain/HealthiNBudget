@@ -37,7 +37,7 @@
 	<gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.dialogs" />
 
-	<gap:plugin name="nl.x-services.plugins.socialsharing" />
+	<gap:plugin name="fi.avaus.cordova.geolocation" />
 
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />

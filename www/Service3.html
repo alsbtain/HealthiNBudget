@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/formulas.js"></script>
+<script type="text/javascript" src="js/papaparse.js"></script>
+<title>HealthiNBudget</title>
+</head>
+<body onload="CSVReady();">
+<h1>HealthiNBudget</h1>
+<p><a href="index.html">index</a></p>
+<form>
+<p id="searchBox"></p>
+</form>
+<p id="results"></p>
+<script>
+var CSVData;
+function CSVReady(){
+	Papa.parse('data/address.csv', {
+		download: true,
+		header: true,
+		complete: function(results) {
+			CSVData = results.data;
+			navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		}
+	});
+}
+
+var onSuccess = function(position) {
+	sortRest(position.coords.latitude, position.coords.longitude);
+};
+
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
+
+function sortRest(latitude, longitude){
+	for(var i=0; i < CSVData.length; i++){
+		CSVData[i].Distance = Math.pow(Math.pow(latitude-CSVData[i].Latitude, 2)+Math.pow(longitude-CSVData[i].Longitude, 2), 0.5);
+		result = CSVData[i].Distance;
+	}
+	document.getElementById('results').innerHTML = result;
+}
+</script>
+</body>
+</html>
