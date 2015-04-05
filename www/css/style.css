@@ -9,7 +9,6 @@ html, body{
 html {
     display: table;
     margin: auto;
-	overflow-y: hidden;
 }
 
 body {
@@ -18,8 +17,6 @@ body {
 	background-attachment: fixed;
     display: table-cell;
     vertical-align: middle;
-	overflow-y: scroll;
-	background-size: 100% 100%;
 }
 
 #container{
