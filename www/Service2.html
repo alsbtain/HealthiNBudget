@@ -14,13 +14,14 @@
 <title>HealthiNBudget</title>
 </head>
 <body onload="showkcal();CSVReady();">
-<h1>HealthiNBudget</h1>
-<p><a href="index.html">index</a></p>
+<div id="container">
+<div id="title">Calorie Counter</div>
 <p>You need to have <span id="kcal"></span> Cal more today.</p>
 <form>
 <p id="searchBox"></p>
 </form>
 <p id="results"></p>
+</div>
 <script>
 var calmore;
 function showkcal(){
@@ -55,7 +56,7 @@ result = '';
 				result += 'Meal: ' + CSVData[i].Description + '<br />';
 				result += 'Measure: ' + CSVData[i].Measure + '<br />';
 				result += 'Energy: ' + CSVData[i].Energy + ' kcal/measure<br />';
-				result += '<input type = "button" value = "I\'ll eat this!" onclick="subtractkcal(' + CSVData[i].Energy + '); showkcal();" /><br /><br />';
+				result += '<input type = "button" value = "I\'ll have this!" onclick="subtractkcal(' + CSVData[i].Energy + '); showkcal();" /><br /><br />';
 			}
 		}
 	}else{
