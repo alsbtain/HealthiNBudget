@@ -53,8 +53,6 @@ body {
 }
 
 #button a{
-	text-decoration: none;
-	color: green;
 	font-family: Trebuchet MS;
 }
 
@@ -65,7 +63,7 @@ body {
     vertical-align: middle;
 }
 
-#list li a{
+a{
 	text-decoration: none;
 	color: green;
 }

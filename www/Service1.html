@@ -13,8 +13,8 @@
 		<title>HealthiNBudget</title>
 	</head>
 	<body onload="initialize();">
-		<h1>HealtihNBudget</h1>
-		<p><a href="search.html">search</a></p>
+		<div id="container">
+		<div id="title">Settings</div>
 		<form>
 		<p>Height: <input type="number" name="ft" id="form_ft" /> ft <input type="number" name="inch" id="form_inch" /> inch</p>
 		<p>Weight: <input type="number" name="weight" id="form_weight" /> lb</p>
@@ -23,5 +23,9 @@
 		<p><input type="button" value="Save" onclick="saveValues();" /></p>
 		</form>
 		<p id="results"></p>
+		</div>
+		<div id="button">
+			<a href="menu.html" id="menulink">Go to menu!</a>
+		</div>
 	</body>
 </html>
