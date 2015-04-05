@@ -11,7 +11,10 @@ function saveValues(){
 	localStorage.setItem("sex", form_sex);
 	localStorage.setItem("age", form_age);
 	
-	localStorage.setItem("kcal", form_age);
+	now = new Date();
+	localStorage.setItem("expireM", now.getMonth());
+	localStorage.setItem("expireD", now.getDate());
+	localStorage.setItem("expireY", now.getFullYear());
 	
 	if(form_sex == 'XY'){
 		localStorage.setItem("kcal", metabolism_rate_men(form_weight, form_height, form_age));
@@ -23,6 +26,7 @@ function saveValues(){
 }
 
 function showResults(){
+if (localStorage.getItem('sex')=="XY" || localStorage.getItem('sex')=="XX"){
 	var result = 'BMI: ' + BMI_calculator_imperials(localStorage.getItem('weight'), localStorage.getItem('height')) + '<br />Status: ' + weight_status(BMI_calculator_imperials(localStorage.getItem('weight'), localStorage.getItem('height'))) + '<br />Calories: ';
 	if(localStorage.getItem('sex') == 'XY'){
 		result += metabolism_rate_men(localStorage.getItem('weight'), localStorage.getItem('height'), localStorage.getItem('age'));
@@ -30,6 +34,7 @@ function showResults(){
 		result += metabolism_rate_women(localStorage.getItem('weight'), localStorage.getItem('height'), localStorage.getItem('age'));
 	}
 	document.getElementById('results').innerHTML = result;
+}
 }
 
 function initialize(){

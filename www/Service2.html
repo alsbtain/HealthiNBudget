@@ -28,7 +28,21 @@
 <script>
 var calmore;
 function showkcal(){
-	calmore = parseInt(localStorage.getItem('kcal'));
+	now = new Date();
+	if(now.getFullYear() > localStorage.getItem('expireY') || now.getMonth() > localStorage.getItem('expireM') || now.getDate() > localStorage.getItem('expireD')){
+		if(localStorage.getItem('sex') == 'XY'){
+			calmore = parseInt(metabolism_rate_men(localStorage.getItem('weight'), localStorage.getItem('height'), localStorage.getItem('age')));
+			localStorage.setItem("kcal", calmore);
+		}else{
+			calmore = parseInt(metabolism_rate_women(localStorage.getItem('weight'), localStorage.getItem('height'), localStorage.getItem('age')));
+			localStorage.setItem("kcal", calmore);
+		}
+		localStorage.setItem("expireM", now.getMonth());
+		localStorage.setItem("expireD", now.getDate());
+		localStorage.setItem("expireY", now.getFullYear());
+	}else{
+		calmore = parseInt(localStorage.getItem('kcal'));
+	}
 	if(calmore<0){
 		calmore = 0;
 	}
