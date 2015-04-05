@@ -54,3 +54,28 @@
 	color: black;
 	font-size: 50px;
 }
+#SecondTitle {
+	Text-align: center;
+	margin: auto;
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	color: black;
+	font-family: CenturyGothic;
+	z-index: 100;
+}
+#backgroundcolor {
+	height: 60%;
+    width: 20%;
+    border-color: #6495ED;
+    background-color: #BCD2EE; /*this gives the color, the one above gives the size*/
+    border-style: 2px dashed;
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    border-radius: 5px;
+    top: 30%;
+    left: 50%;
+    size: 55px;
+    padding-top: 40px;
+}
