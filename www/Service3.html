@@ -46,9 +46,18 @@ function sortRest(latitude, longitude){
 	result = '';
 	for(var i=0; i < (CSVData.length-1); i++){
 		CSVData[i].Distance = Math.sqrt(Math.pow(latitude-CSVData[i].Latitude, 2)+Math.pow(longitude-CSVData[i].Longitude, 2));
-		result += CSVData[i].Distance + '<br />';
+		// result += CSVData[i].Distance + '<br />';
 	}
+		
+	CSVData.sort(function(a, b) { return a.Distance - b.Distance });
+	
+	for(var i=0; i < (CSVData.length-1); i++){
+		result += CSVData[i].Location + '<br />';
+	}
+	
 	document.getElementById('results').innerHTML = result;
+	
+	
 }
 </script>
 </body>
